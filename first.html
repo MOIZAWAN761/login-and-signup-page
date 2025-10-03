@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feedback</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(120deg, #89f7fe, #66a6ff);
+    }
+
+    .mainContainer {
+      margin-top: 30px;
+      display: flex;
+      width: 90%;
+      max-width: 800px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(15px);
+      flex-direction: column;
+      padding: 40px;
+    }
+
+    .mainContainer h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    form label {
+      font-weight: 600;
+      color: #222;
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form select,
+    form textarea {
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      outline: none;
+      background: #f4f4f4;
+      transition: 0.3s;
+      font-size: 14px;
+    }
+
+    form input:focus,
+    form textarea:focus,
+    form select:focus {
+      background: #fff;
+      box-shadow: 0 0 8px rgba(102, 166, 255, 0.8);
+    }
+
+    form textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .rating {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .checkbox {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    form button {
+      padding: 12px;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    form button:hover {
+      background: linear-gradient(90deg, #5a67d8, #6b46c1);
+    }
+
+    @media (max-width: 600px) {
+      .mainContainer {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="mainContainer">
+    <h1>Feedback Form</h1>
+    <form id="feedbackForm">
+      <label for="name">Name (optional):</label>
+      <input type="text" id="name" name="name">
+
+      <label for="email">Email (optional):</label>
+      <input type="email" id="email" name="email">
+
+      <label>Rate your experience:</label>
+      <div class="rating">
+        <input type="radio" name="rating" value="1"> 1
+        <input type="radio" name="rating" value="2"> 2
+        <input type="radio" name="rating" value="3"> 3
+        <input type="radio" name="rating" value="4"> 4
+        <input type="radio" name="rating" value="5"> 5
+      </div>
+
+      <label for="message">Your Feedback:</label>
+      <textarea id="message" name="message" required></textarea>
+
+      <label for="category">Category:</label>
+      <select id="category" name="category">
+        <option value="general">General</option>
+        <option value="bug">Bug Report</option>
+        <option value="suggestion">Suggestion</option>
+        <option value="complaint">Complaint</option>
+      </select>
+
+      <div class="checkbox">
+        <input type="checkbox" id="consent" name="consent">
+        <label for="consent">You may contact me about this feedback</label>
+      </div>
+
+      <button type="submit">Submit Feedback</button>
+    </form>
+  </div>
+</body>
+</html>

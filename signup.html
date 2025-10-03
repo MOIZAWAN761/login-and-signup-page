@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="script.js" type="module"></script>
+  <title>Signup Form</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(120deg, #89f7fe, #66a6ff);
+    }
+
+    .mainContainer {
+          margin-top: 30px;
+      display: flex;
+      width: 90%;
+      max-width: 1000px;
+      /* height: 90%; */
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Left Side - Intro */
+    .sideContainer {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      background: url("https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1200&q=80")
+        no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      position: relative;
+    }
+
+    .sideContainer::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+    }
+
+    .intro {
+      position: relative;
+      max-width: 80%;
+      z-index: 1;
+    }
+
+    .intro h1 {
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+    }
+
+    .intro p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* Right Side - Form */
+    .formContainer {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(15px);
+    }
+
+    .formContainer h1 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #333;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    form label {
+      font-weight: 600;
+      color: #222;
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="password"] {
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      outline: none;
+      background: #f4f4f4;
+      transition: 0.3s;
+    }
+
+    form input:focus {
+      background: #fff;
+      box-shadow: 0 0 8px rgba(102, 166, 255, 0.8);
+    }
+
+    form .checkbox {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    form button {
+      padding: 12px;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    form button:hover {
+      background: linear-gradient(90deg, #5a67d8, #6b46c1);
+    }
+
+    .formContainer div {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .formContainer a {
+      color: #764ba2;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .formContainer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 850px) {
+      .mainContainer {
+        flex-direction: column;
+        height: auto;
+      }
+      .sideContainer,
+      .formContainer {
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="mainContainer">
+    <!-- Left Side -->
+    <div class="sideContainer">
+      <div class="intro">
+        <h1>Create Your Account</h1>
+        <p>
+          Join us today and unlock exclusive features designed to make your
+          journey easier and more fun!
+        </p>
+      </div>
+    </div>
+
+    <!-- Right Side -->
+    <div class="formContainer">
+      <h1>Sign Up</h1>
+      <form id="signupForm">
+        <label for="fullname">Full Name</label>
+        <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Choose a username" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+        <label for="confirm_password">Repeat Password</label>
+        <input type="password" id="confirm_password" name="confirm_password" placeholder="Repeat your password" required>
+
+        <div class="checkbox">
+          <input type="checkbox" id="terms" name="terms" required>
+          <label for="terms">I agree to the Terms of Service</label>
+        </div>
+
+        <button type="submit">Sign Up</button>
+      </form>
+
+      <div>
+        Already have an account? <a href="./login.html">Sign In</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="script.js"  defer></script>
+    <title>Signup Form</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+
+        align-items: center;
+        background: linear-gradient(120deg, #89f7fe, #66a6ff);
+      }
+
+      .mainContainer {
+        display: flex;
+        width: 90%;
+        max-width: 1000px;
+        height: 600px;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Left Side - Intro */
+      .sideContainer {
+        width: 60%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px;
+        background: url("https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1200&q=80")
+          no-repeat center center/cover;
+        color: white;
+        text-align: center;
+        position: relative;
+      }
+
+      .sideContainer::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.55);
+      }
+
+      .intro {
+        position: relative;
+        max-width: 80%;
+        z-index: 1;
+      }
+
+      .intro h1 {
+        font-size: 2.2rem;
+        margin-bottom: 15px;
+      }
+
+      .intro p {
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      /* Right Side - Form */
+      .formContainer {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 40px;
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(15px);
+      }
+
+      .formContainer h1 {
+        text-align: center;
+        margin-bottom: 25px;
+        color: #333;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      form label {
+        font-weight: 600;
+        color: #222;
+      }
+
+      form input {
+        padding: 12px;
+        border: none;
+        border-radius: 10px;
+        outline: none;
+        background: #f4f4f4;
+        transition: 0.3s;
+      }
+
+      form input:focus {
+        background: #fff;
+        box-shadow: 0 0 8px rgba(102, 166, 255, 0.8);
+      }
+
+      form button {
+        padding: 12px;
+        background: linear-gradient(90deg, #667eea, #764ba2);
+        border: none;
+        border-radius: 10px;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      form button:hover {
+        background: linear-gradient(90deg, #5a67d8, #6b46c1);
+      }
+
+      .formContainer div {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 14px;
+        color: #333;
+      }
+
+      .formContainer a {
+        color: #764ba2;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .formContainer a:hover {
+        text-decoration: underline;
+      }
+
+      /* Responsive */
+      @media (max-width: 850px) {
+        .mainContainer {
+          flex-direction: column;
+          height: auto;
+        }
+        .sideContainer,
+        .formContainer {
+          width: 100%;
+          height: 50%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mainContainer">
+      <div class="sideContainer">
+        <div class="intro">
+          <h1>Welcome to our website</h1>
+          <p>
+            Discover amazing features and connect with us. Sign in to explore
+            more opportunities tailored just for you.
+          </p>
+        </div>
+      </div>
+
+      <div class="formContainer" id="loginform">
+        <h1>User Login</h1>
+        <form action="./first.html">
+          <label for="email">Email</label>
+          <input
+            name="email"
+            type="email"
+            placeholder="Enter your email"
+            id="email"
+            required
+          />
+          <label for="password">Password</label>
+          <input
+            type="password"
+            placeholder="Enter your Password"
+            id="password"
+            name="password"
+          />
+          <button type="submit">Submit</button>
+        </form>
+        <div>
+          <span>
+            Don’t have an account?
+            <a href="./signup.html">Signup</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
